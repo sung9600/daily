@@ -1,7 +1,7 @@
 #include <cstdio>
 
 int main(){
-    printf("12345");
+    printf("123456");
 
     return 0;
 }
