@@ -1,7 +1,8 @@
 #include <cstdio>
 
 int main(){
-    printf("1234");
+    printf("12344");
+
     return 0;
 }
 
