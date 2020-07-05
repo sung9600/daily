@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdio>
-#include <string>
+#include <cstring>
 #include <algorithm>
 using namespace std;
 
@@ -11,6 +11,7 @@ int main(){
     getline(cin,word);
     vector<char*> resultarr;
     int count=0;
+    char compare[word.size()]="";
     for(int i=1;i<word.size()-1;i++){
         for(int j=i+1;j<word.size();j++){
             string newstring;
@@ -28,10 +29,34 @@ int main(){
             for(int idx=0;idx<word.size();idx++){
                 newarr[idx]=newstring[idx];
             }
-            resultarr.push_back(newarr);
+            //resultarr.push_back(newarr);
+            if(i==1&&j==2){
+                strcpy(compare,newarr);
+            }
+            else{
+                if(strcmp(compare,newarr)>0){
+                    strcpy(compare,newarr);
+                }
+            }
         }
     }
-    sort(resultarr.begin(),resultarr.end());
-    cout<<resultarr[0]<<endl;
+    for(int i=0;i<word.size();i++){
+        printf("%c",compare[i]);
+    }
+    /*for(int i=0;i<resultarr.size();i++){
+       cout<<resultarr[i]<<endl;
+    }
+    cout<<endl;
+    char result[word.size()];
+    strcpy(result,resultarr[0]);
+    //cout<<result<<endl;
+    for(int i=0;i<resultarr.size();i++){
+        if(strcmp(result,resultarr[i])>0){
+            strcpy(result,resultarr[i]);
+            }
+        //cout<<result<<endl;
+    }
+    //cout<<endl;
+    cout<<result;*/
     return 0;
 }
